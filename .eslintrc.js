@@ -17,12 +17,11 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   env: {
-    browser: true
-  },
-  rules: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    'no-empty-glimmer-component-classes': 'off',
+  },
   overrides: [
     // node files
     {
@@ -38,12 +37,10 @@ module.exports = {
         './lib/*/index.js',
         './server/**/*.js',
       ],
-      excludedFiles: [
-        'app/**',
-      ],
+      excludedFiles: ['app/**'],
       parserOptions: {
         sourceType: 'script',
-        ecmaVersion: 2015
+        ecmaVersion: 2015,
       },
       env: {
         browser: false,
