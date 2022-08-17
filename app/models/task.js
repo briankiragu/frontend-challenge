@@ -3,11 +3,11 @@ const { Model, attr } = DS;
 
 export default class TaskModel extends Model {
   @attr('string')
-  name
+  name;
 
   @attr('string')
-  description
+  description;
 
   @attr('boolean')
-  isComplete
+  isComplete;
 }
