@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
 
-export default
-  class TaskListComponent extends Component {
-}
+// eslint-disable-next-line ember/no-empty-glimmer-component-classes
+export default class TaskListComponent extends Component {}

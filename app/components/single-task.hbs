@@ -7,9 +7,9 @@
       <div class="btn-group btn-group-sm" role="group">
         <BsButton @type="secondary">Pin</BsButton>
         {{#if @task.isComplete}}
-          <BsButton @type="primary" onClick={{action (mut @task.isComplete) false}}>Undo</BsButton>
+          <BsButton @type="primary" onClick={{fn (mut @task.isComplete) false}}>Undo</BsButton>
         {{else}}
-          <BsButton @type="primary" onClick={{action (mut @task.isComplete) true}}>Done</BsButton>
+          <BsButton @type="primary" onClick={{fn (mut @task.isComplete) true}}>Done</BsButton>
         {{/if}}
       </div>
     </div>
