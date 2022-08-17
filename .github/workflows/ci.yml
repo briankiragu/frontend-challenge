@@ -24,8 +24,8 @@ jobs:
         with:
           node-version: 14.x
           cache: npm
-      - name: Install Dependencies
-        run: npm ci
+      - name: Install App Dependencies
+        run: yarn --frozen-lockfile 
       - name: Lint
         run: npm run lint
 
@@ -41,7 +41,5 @@ jobs:
         with:
           node-version: 14.x
           cache: npm
-      - name: Install Dependencies
-        run: npm ci
-      - name: Run Tests
-        run: npm test
+      - name: Install App Dependencies
+        run: yarn --frozen-lockfile
