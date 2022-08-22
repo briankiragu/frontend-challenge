@@ -1,0 +1,19 @@
+<div class='task-list'>
+  <header class='task-list__header border-top'>
+    <h5 class='task-list__header-item'>Task</h5>
+    <h5 class='task-list__header-item'>Actions</h5>
+  </header>
+
+  {{! Pinned items }}
+  {{! <section class='task-list__items'>
+    <h6 class='task-list__items-heading border-bottom'>Pinned items</h6>
+    <Task::Item />
+  </section> }}
+
+  {{! Unpinned items }}
+  <section class='task-list__items'>
+    <Task::Item />
+    <Task::Item />
+    <Task::Item />
+  </section>
+</div>

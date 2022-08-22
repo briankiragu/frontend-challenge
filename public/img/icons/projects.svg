@@ -1,0 +1,13 @@
+<svg id="ic_projects" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <rect id="Rectangle_274" data-name="Rectangle 274" width="20" height="20" fill="rgba(255,255,255,0)"/>
+  <g id="Group_414" data-name="Group 414" transform="translate(3.5 0.5)">
+    <g id="Rectangle_443" data-name="Rectangle 443" transform="translate(-0.5 2.679)" fill="none" stroke="#283246" stroke-width="1">
+      <rect width="14" height="14" rx="2" stroke="none"/>
+      <rect x="0.5" y="0.5" width="13" height="13" rx="1.5" fill="none"/>
+    </g>
+    <path id="Path_248" data-name="Path 248" d="M432.5,789.75v-.5a2.5,2.5,0,0,0-2.5-2.5h0a2.5,2.5,0,0,0-2.5,2.5v.5H427a1.5,1.5,0,0,0-1.5,1.5v1.5h9v-1.5a1.5,1.5,0,0,0-1.5-1.5Z" transform="translate(-423.5 -786.572)" fill="#f4f4f5" stroke="#283246" stroke-width="1"/>
+    <circle id="Ellipse_78" data-name="Ellipse 78" cx="0.5" cy="0.5" r="0.5" transform="translate(6 2)" fill="none" stroke="#283246" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+  <line id="Line_256" data-name="Line 256" x2="8" transform="translate(5.773 9.679)" fill="none" stroke="#283246" stroke-width="1"/>
+  <line id="Line_257" data-name="Line 257" x2="6" transform="translate(5.773 11.679)" fill="none" stroke="#283246" stroke-width="1"/>
+</svg>

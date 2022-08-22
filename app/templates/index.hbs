@@ -1,36 +1,51 @@
-<h1>Task List</h1>
-<h4>Pinned Task</h4>
+<div id='index'>
+  {{! Tabs Panel }}
+  <div class='tabs'>
+    {{! Tab Links }}
+    <nav class='tabs__links border-bottom'>
+      <button type='button' class='tabs__links-item active'>Active Tasks</button>
+      <button type='button' class='tabs__links-item'>Completed Tasks</button>
+    </nav>
 
-{{#if this.pinnedTask}}
-  <div class='list-group-item {{if this.pinnedTask.isComplete "is-complete"}}'>
-    <div class='d-flex'>
-      <h5 class='card-title flex-fill'>
-        {{this.pinnedTask.name}}
-      </h5>
-      <div class='toggle-done ml-auto'>
-        <div class='btn-group btn-group-sm' role='group'>
-          <BsButton @type='secondary'>Unpin</BsButton>
-          {{#if this.pinnedTask.isComplete}}
-            <BsButton @type='primary'>Undo</BsButton>
-          {{else}}
-            <BsButton @type='primary'>Done</BsButton>
-          {{/if}}
+    <section class='tabs__content'>
+      {{! Tab content filter }}
+      <div class='tabs__content-filter'>
+        <label for='filter' class='tabs__content-filter__input'>
+          <input
+            type='search'
+            id='filter'
+            placeholder='Filter by user'
+            class='border'
+          />
+        </label>
+
+        <div class='tabs__content-filter__results shadow border'>
+          <div class='tabs__content-filter__results-item'>
+            <img src='/img/avatars/marley.png' alt='Marley' />
+            <span>Marley</span>
+          </div>
+          <div class='tabs__content-filter__results-item'>
+            <img src='/img/avatars/annie.png' alt='Marley' />
+            <span>Annie Kamau</span>
+          </div>
+          <div class='tabs__content-filter__results-item'>
+            <img src='/img/avatars/agbaye.png' alt='Marley' />
+            <span>Agbaye James</span>
+          </div>
+          <div class='tabs__content-filter__results-item'>
+            <img src='/img/avatars/clint.png' alt='Marley' />
+            <span>Clint West</span>
+          </div>
+          <div class='tabs__content-filter__results-item'>
+            <img src='/img/avatars/john.png' alt='Marley' />
+            <span>John Jones</span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class='task-description'>
-      {{this.pinnedTask.description}}
-    </div>
-  </div>
-{{else}}
-  No Pinned Tasks
-{{/if}}
-<h4>Other Tasks</h4>
-<TaskList @tasks={{this.model}} />
 
-<nav class='navbar navbar-light bg-light'>
-  <span class='navbar-text'>
-    <strong>Completed Tasks:</strong>
-    {{this.completedTasks}}
-  </span>
-</nav>
+      <div class='tabs__content-item'>
+        <Task::List />
+      </div>
+    </section>
+  </div>
+</div>

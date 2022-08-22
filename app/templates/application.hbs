@@ -1,11 +1,14 @@
-<div class='main-container'>
-  <div class='side-nav'>
-    <SideNav />
-  </div>
+<div class='app-container'>
+  <aside class='app-navigation'>
+    {{! Sidebar }}
+    <Navigation::Sidebar />
+  </aside>
 
-  <div class='row justify-content-md-center'>
-    <div class='col-md-6'>
-      {{outlet}}
-    </div>
-  </div>
+  <main class='app-content'>
+    {{! Menubar }}
+    {{!-- <Navigation::Menubar /> --}}
+
+    {{! Main content }}
+    {{outlet}}
+  </main>
 </div>

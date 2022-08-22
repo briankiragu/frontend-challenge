@@ -1,2 +1,38 @@
+// Import Inter font
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Import EmberBootstrap
 @import 'ember-bootstrap/bootstrap';
-@import './styles';
+
+// Import global variables
+@import 'partials/variables';
+
+// Set system font.
+* {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: 20% auto;
+
+  .app-navigation {
+    min-height: 100vh;
+    overflow-y: hidden;
+
+    // Sidebar styles
+    @import './partials/navigation/sidebar';
+  }
+}
+
+.app-content {
+  background-color: white;
+
+  // Menubar styles
+  @import './partials/navigation/menubar';
+
+  // Index page styles.
+  @import './index';
+}

@@ -1,0 +1,39 @@
+#sidebar {
+  background-color: var(--unnamed-color-f7fcfd);
+  height: 100%;
+
+  img {
+    margin: 2rem;
+  }
+
+  .sidebar__links {
+    list-style-type: none;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      transition: all 0.5s ease-out;
+      margin-bottom: 0.4rem;
+      padding: 0.6rem 2.6rem;
+
+      img {
+        margin: 0;
+        margin-right: 12px;
+      }
+
+      &:hover {
+        background-color: var(--unnamed-color-11d0a7);
+      }
+
+      &.active {
+        background-color: var(--unnamed-color-eaecf5);
+        border-right: 3px solid var(--unnamed-color-0854d9);
+        color: var(--unnamed-color-0854d9);
+        font-weight: 500;
+      }
+    }
+  }
+}

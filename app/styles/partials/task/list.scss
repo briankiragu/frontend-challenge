@@ -1,0 +1,25 @@
+.task-list {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 3.2rem;
+
+    &-item {
+      color: var(--unnamed-color-909398);
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0;
+    }
+  }
+
+  &__items {
+    &-heading {
+      color: var(--unnamed-color-11d0a7);
+      font-size: 14px;
+      font-weight: medium;
+      margin: 0;
+      margin-top: 0.5rem;
+      padding: 0.6rem 3.2rem;
+    }
+  }
+}

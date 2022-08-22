@@ -1,0 +1,72 @@
+#index {
+  padding: 4rem;
+
+  .tabs {
+    &__links {
+      &-item {
+        background-color: transparent;
+        border: none;
+        color: var(--unnamed-color-646971);
+        font-size: var(--unnamed-font-size-18);
+        margin-right: 1rem;
+        padding: 0.3rem 0.2rem;
+
+        &.active {
+          border-bottom: 2px solid var(--unnamed-color-0854d9);
+          color: var(--unnamed-color-0854d9);
+          font-weight: 600;
+        }
+      }
+    }
+
+    &__content {
+      padding: 15px 0;
+
+      &-filter {
+        border-radius: 4px;
+        margin-bottom: 0.6rem;
+        width: 200px;
+
+        &__input {
+          margin-bottom: 3px;
+
+          input {
+            border-radius: var(--border-radius);
+            padding: 8px 17px;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+
+        &__results {
+          border-radius: var(--border-radius);
+          display: none;
+          padding: 0;
+
+          &-item {
+            align-items: center;
+            display: flex;
+            transition: all 0.3s ease-out;
+            padding: 3px 10px;
+
+            &:hover {
+              background-color: var(--unnamed-color-eaecf5);
+            }
+
+            img {
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+
+      &-item {
+        // Import task stylings
+        @import './partials/task/list';
+        @import './partials/task/item';
+      }
+    }
+  }
+}
