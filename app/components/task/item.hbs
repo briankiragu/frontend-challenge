@@ -1,0 +1,50 @@
+<div class='task-item border-top'>
+  {{! Task Item Checkbox }}
+  <label for='completed' class='task-item__checkbox'>
+    <input type='checkbox' name='completed' id='completed' class='border' />
+  </label>
+
+  {{! Task Item Text }}
+  <div>
+    <h6 class='task-item__title'>Complete frontend challenge</h6>
+    <div class='task-item__text'>
+      <span class='task-item__text-description'>Easy as pie</span>
+      <span class='task-item__text-deadline'>
+        Deadline: 27<sup>th</sup>
+        Aug 2022
+      </span>
+      <img src='/img/icons/flag.svg' alt='Flag' class='task-item__text-flag' />
+    </div>
+  </div>
+
+  {{! Task Item Avatars }}
+  <div class='task-item__avatars'>
+    <img
+      src='/img/avatars/default.png'
+      alt='Default'
+      class='task-item__avatars-image'
+    />
+    <img
+      src='/img/avatars/annie.png'
+      alt='Annie'
+      class='task-item__avatars-image'
+    />
+    <img
+      src='/img/avatars/clint.png'
+      alt='Clint'
+      class='task-item__avatars-image'
+    />
+  </div>
+
+  {{! Task Item Pin }}
+  <div class='task-item__pin'>
+    <button type='button' class='button rounded'>
+      <img src='/img/icons/pin.svg' alt='Pin' />
+    </button>
+  </div>
+
+  {{! Task Item Actions }}
+  <div class='task-item__actions'>
+    <button type='button' class='button rounded'>In progress</button>
+  </div>
+</div>
