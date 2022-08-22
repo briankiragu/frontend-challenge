@@ -1,20 +1,26 @@
-<li class="list-group-item {{if @task.isComplete "is-complete"}}">
-  <div class="d-flex">
-    <h5 class="card-title flex-fill">
+<li class='list-group-item {{if @task.isComplete "is-complete"}}'>
+  <div class='d-flex'>
+    <h5 class='card-title flex-fill'>
       {{@task.name}}
     </h5>
-    <div class="toggle-done ml-auto">
-      <div class="btn-group btn-group-sm" role="group">
-        <BsButton @type="secondary">Pin</BsButton>
+
+    <div class='toggle-done ml-auto'>
+      <div class='btn-group btn-group-sm' role='group'>
+        <BsButton @type='secondary'>Pin</BsButton>
         {{#if @task.isComplete}}
-          <BsButton @type="primary" onClick={{fn (mut @task.isComplete) false}}>Undo</BsButton>
+          <BsButton @type='primary' onClick={{fn (mut @task.isComplete) false}}>
+            Undo
+          </BsButton>
         {{else}}
-          <BsButton @type="primary" onClick={{fn (mut @task.isComplete) true}}>Done</BsButton>
+          <BsButton @type='primary' onClick={{fn (mut @task.isComplete) true}}>
+            Done
+          </BsButton>
         {{/if}}
       </div>
     </div>
   </div>
-  <div class="task-description">
+
+  <div class='task-description'>
     {{@task.description}}
   </div>
 </li>
