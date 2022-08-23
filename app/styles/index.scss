@@ -3,18 +3,20 @@
 
   .tabs {
     &__links {
+      border-bottom: 1px solid var(--border-color-dark);
+
       &-item {
         background-color: transparent;
         border: none;
-        color: var(--unnamed-color-646971);
-        font-size: var(--unnamed-font-size-18);
+        color: var(--accent-color-dark);
+        font-size: var(--font-size);
+        font-weight: semibold;
         margin-right: 1rem;
         padding: 0.3rem 0.2rem;
 
         &.active {
-          border-bottom: 2px solid var(--unnamed-color-0854d9);
-          color: var(--unnamed-color-0854d9);
-          font-weight: 600;
+          border-bottom: 2px solid var(--primary-color);
+          color: var(--primary-color);
         }
       }
     }
@@ -52,7 +54,7 @@
             padding: 3px 10px;
 
             &:hover {
-              background-color: var(--unnamed-color-eaecf5);
+              background-color: var(--accent-color-light);
             }
 
             img {

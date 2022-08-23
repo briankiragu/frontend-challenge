@@ -1,21 +1,22 @@
 .task-list {
   &__header {
+    border-top: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     padding: 0.6rem 3.2rem;
 
     &-item {
-      color: var(--unnamed-color-909398);
-      font-size: 16px;
-      font-weight: normal;
+      color: var(--accent-color);
+      font-size: 0.9rem;
+      font-weight: semibold;
       margin: 0;
     }
   }
 
   &__items {
     &-heading {
-      color: var(--unnamed-color-11d0a7);
-      font-size: 14px;
+      color: var(--accent-color);
+      font-size: 0.75rem;
       font-weight: medium;
       margin: 0;
       margin-top: 0.5rem;
