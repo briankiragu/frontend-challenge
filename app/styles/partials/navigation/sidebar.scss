@@ -15,7 +15,7 @@
     &-item {
       display: flex;
       align-items: center;
-      transition: all 0.5s ease-out;
+      transition: var(--transition-hover);
       margin-bottom: 0.4rem;
       padding: 0.6rem 2.6rem;
 

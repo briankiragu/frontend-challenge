@@ -8,13 +8,21 @@
       &-item {
         background-color: transparent;
         border: none;
+        border-top-left-radius: var(--border-radius-sm);
+        border-top-right-radius: var(--border-radius-sm);
         color: var(--accent-color-dark);
         font-size: var(--font-size);
         font-weight: semibold;
-        margin-right: 1rem;
-        padding: 0.3rem 0.2rem;
+        // margin-right: 1rem;
+        padding: 0.4rem 0.8rem;
+        transition: var(--transition-hover);
+
+        &:hover {
+          background-color: var(--background-color-dark);
+        }
 
         &.active {
+          background-color: white;
           border-bottom: 2px solid var(--primary-color);
           color: var(--primary-color);
         }
@@ -50,7 +58,7 @@
           &-item {
             align-items: center;
             display: flex;
-            transition: all 0.3s ease-out;
+            transition: var(--transition-hover);
             padding: 3px 10px;
 
             &:hover {

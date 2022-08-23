@@ -14,9 +14,13 @@
 
   /* Border values */
   --border-radius: 6px;
+  --border-radius-sm: 2px;
 
   /* Font/text values */
   --font-family: 'Inter', sans-serif;
   --font-size: 16px;
   --font-weight: normal;
+
+  /* Transitions */
+  --transition-hover: all 0.3s ease-out;
 }
