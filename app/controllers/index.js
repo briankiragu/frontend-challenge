@@ -13,6 +13,16 @@ export default class IndexController extends Controller {
   @tracked completedTasks = this.model.filter((task) => task.isComplete);
 
   /**
+   * Return the count of completed tasks.
+   *
+   * @returns {number}
+   * @author Brian Kariuki <bkariuki@hotmail.com>
+   */
+  get completedTaskCount() {
+    return this.completedTasks.length;
+  }
+
+  /**
    * Check if the current active tab is 'pending tasks'
    *
    * @returns {boolean}

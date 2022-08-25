@@ -4,15 +4,19 @@
   .tabs {
     &__links {
       border-bottom: 1px solid var(--border-color-dark);
+      display: flex;
 
       &-item {
+        align-items: center;
         background-color: transparent;
         border: none;
         border-top-left-radius: var(--border-radius-sm);
         border-top-right-radius: var(--border-radius-sm);
         color: var(--accent-color-dark);
+        display: flex;
         font-size: 0.95rem;
         font-weight: semibold;
+        justify-content: center;
         padding: 0.4rem 0.8rem;
         transition: var(--transition-hover);
 
@@ -24,10 +28,24 @@
           outline: none;
         }
 
+        &-count {
+          background-color: var(--accent-color-dark);
+          border-radius: 100%;
+          color: white;
+          font-size: 0.75rem;
+          margin: 0;
+          margin-left: 0.3rem;
+          padding: 0.1rem 0.4rem;
+        }
+
         &.active {
           background-color: white;
           border-bottom: 2px solid var(--primary-color);
           color: var(--primary-color);
+
+          &-count {
+            background-color: var(--primary-color);
+          }
         }
       }
     }
