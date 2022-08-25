@@ -12,10 +12,22 @@ export default class IndexController extends Controller {
   // Declare all the unpinned tasks.
   @tracked completedTasks = this.model.filter((task) => task.isComplete);
 
+  /**
+   * Check if the current active tab is 'pending tasks'
+   *
+   * @returns {boolean}
+   * @author Brian Kariuki <bkariuki@hotmail.com>
+   */
   get isPendingTab() {
     return this.activeTab === 'active';
   }
 
+  /**
+   * Check if the current active tab is 'completed tasks'
+   *
+   * @returns {boolean}
+   * @author Brian Kariuki <bkariuki@hotmail.com>
+   */
   get isCompletedTab() {
     return this.activeTab === 'completed';
   }
@@ -49,6 +61,10 @@ export default class IndexController extends Controller {
     // If the task exists, pin it.
     if (index !== -1) {
       this.model[index].isComplete = !this.model[index].isComplete;
+
+      // Refresh the pending and completed task lists.
+      this.pendingTasks = this.model.filter((task) => !task.isComplete);
+      this.completedTasks = this.model.filter((task) => task.isComplete);
     }
   }
 }
