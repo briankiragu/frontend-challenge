@@ -12,6 +12,14 @@ export default class IndexController extends Controller {
   // Declare all the unpinned tasks.
   @tracked completedTasks = this.model.filter((task) => task.isComplete);
 
+  get isPendingTab() {
+    return this.activeTab === 'active';
+  }
+
+  get isCompletedTab() {
+    return this.activeTab === 'completed';
+  }
+
   /**
    * Change the active tab displayed to the user.
    *

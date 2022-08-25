@@ -61,7 +61,7 @@
           &-item {
             align-items: center;
             display: flex;
-            transition: var(--transition-hover);
+            transition: var(--transition-all);
             padding: 3px 10px;
 
             &:hover {

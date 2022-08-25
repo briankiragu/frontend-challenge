@@ -5,14 +5,14 @@
     <nav class='tabs__links'>
       <button
         type='button'
-        class='tabs__links-item active'
+        class='tabs__links-item {{if this.isPendingTab "active"}}'
         {{on 'click' (fn this.focusTab 'active')}}
       >
         Active Tasks
       </button>
       <button
         type='button'
-        class='tabs__links-item'
+        class='tabs__links-item {{if this.isCompletedTab "active"}}'
         {{on 'click' (fn this.focusTab 'completed')}}
       >
         Completed Tasks
@@ -55,12 +55,21 @@
         </div>
       </div>
 
-      <div class='tabs__content-item'>
-        <Task::List
-          @tasks={{this.pendingTasks}}
-          @toggleCompleted={{this.toggleCompleted}}
-        />
-      </div>
+      {{#if this.isPendingTab}}
+        <div class='tabs__content-item'>
+          <Task::List
+            @tasks={{this.pendingTasks}}
+            @toggleCompleted={{this.toggleCompleted}}
+          />
+        </div>
+      {{else}}
+        <div class='tabs__content-item'>
+          <Task::List
+            @tasks={{this.completedTasks}}
+            @toggleCompleted={{this.toggleCompleted}}
+          />
+        </div>
+      {{/if}}
     </section>
   </div>
 </div>

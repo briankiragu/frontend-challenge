@@ -22,5 +22,6 @@
   --font-weight: normal;
 
   /* Transitions */
-  --transition-hover: all 0.3s ease-out;
+  --transition-all: all 0.3s ease-out;
+  --transition-hover: background 0.3s ease-out;
 }
