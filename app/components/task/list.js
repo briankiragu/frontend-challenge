@@ -20,6 +20,16 @@ export default class TaskListComponent extends Component {
   }
 
   /**
+   * If there are any tasks whatsoever.
+   *
+   * @returns {boolean}
+   * @author Brian Kariuki <bkariuki@hotmail.com>
+   */
+  get hasTasks() {
+    return this.hasPinnedTasks || this.hasUnpinnedTasks;
+  }
+
+  /**
    * Pin a task to the top of the pinned tasks list.
    *
    * @param {number} id The task to pin.

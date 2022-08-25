@@ -110,6 +110,11 @@
         background-color: var(--accent-color);
         color: white;
       }
+
+      &.active {
+        background-color: var(--accent-color);
+        color: white;
+      }
     }
   }
 }

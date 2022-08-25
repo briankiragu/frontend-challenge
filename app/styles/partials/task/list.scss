@@ -1,30 +1,49 @@
 .task-list {
-  &__header {
-    border-bottom: 1px solid var(--border-color);
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    padding: 0.6rem 3.2rem;
+  &__content {
+    &-header {
+      border-bottom: 1px solid var(--border-color);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      padding: 0.6rem 3.2rem;
 
-    &-item {
-      color: var(--accent-color);
-      font-size: 0.9rem;
-      font-weight: semibold;
-      margin: 0;
+      &__item {
+        color: var(--accent-color);
+        font-size: 0.9rem;
+        font-weight: semibold;
+        margin: 0;
+      }
+    }
+
+    &-items {
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+
+      &__heading {
+        color: var(--accent-color-light);
+        font-size: 0.9rem;
+        font-weight: medium;
+        margin: 0;
+        margin-top: 0.5rem;
+        padding: 0.4rem 3.2rem;
+      }
     }
   }
 
-  &__items {
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 2rem;
+  &__loader {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10em;
 
-    &-heading {
+    img {
+      margin-bottom: 0.75rem;
+    }
+
+    &-text {
       color: var(--accent-color-light);
       font-size: 0.9rem;
-      font-weight: medium;
-      margin: 0;
-      margin-top: 0.5rem;
-      padding: 0.4rem 3.2rem;
     }
   }
 }

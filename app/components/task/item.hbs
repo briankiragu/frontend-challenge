@@ -50,6 +50,8 @@
 
   {{! Task Item Actions }}
   <div class='task-item__actions'>
-    <span class='task-item__actions-item'>{{this.status}}</span>
+    <span class='task-item__actions-item {{if @task.isComplete "active"}}'>
+      {{this.status}}
+    </span>
   </div>
 </div>

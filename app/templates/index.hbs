@@ -58,6 +58,7 @@
       {{#if this.isPendingTab}}
         <div class='tabs__content-item'>
           <Task::List
+            @status='pending'
             @tasks={{this.pendingTasks}}
             @toggleCompleted={{this.toggleCompleted}}
           />
@@ -65,6 +66,7 @@
       {{else}}
         <div class='tabs__content-item'>
           <Task::List
+            @status='completed'
             @tasks={{this.completedTasks}}
             @toggleCompleted={{this.toggleCompleted}}
           />

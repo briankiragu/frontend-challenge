@@ -1,33 +1,46 @@
 <div class='task-list'>
-  <header class='task-list__header'>
-    <h5 class='task-list__header-item'>Task</h5>
-    <h5 class='task-list__header-item'>Actions</h5>
-  </header>
+  {{#if this.hasTasks}}
+    <div class='task-list__content'>
+      <header class='task-list__content-header'>
+        <h5 class='task-list__content-header__item'>Task</h5>
+        <h5 class='task-list__content-header__item'>Actions</h5>
+      </header>
 
-  {{! Pinned items }}
-  {{#if this.hasPinnedTasks}}
-    <section class='task-list__items'>
-      <h6 class='task-list__items-heading'>Pinned items</h6>
-      {{#each this.pinnedTasks as |task|}}
-        <Task::Item
-          @task={{task}}
-          @togglePin={{fn this.unpinTask task.id}}
-          @toggleComplete={{fn @toggleCompleted task.id}}
-        />
-      {{/each}}
-    </section>
-  {{/if}}
+      {{! Pinned items }}
+      {{#if this.hasPinnedTasks}}
+        <section class='task-list__content-items'>
+          <h6 class='task-list__content-items__heading'>Pinned items</h6>
+          {{#each this.pinnedTasks as |task|}}
+            <Task::Item
+              @task={{task}}
+              @togglePin={{fn this.unpinTask task.id}}
+              @toggleComplete={{fn @toggleCompleted task.id}}
+            />
+          {{/each}}
+        </section>
+      {{/if}}
 
-  {{! Unpinned items }}
-  {{#if this.hasUnpinnedTasks}}
-    <section class='task-list__items'>
-      {{#each this.unpinnedTasks as |task|}}
-        <Task::Item
-          @task={{task}}
-          @togglePin={{fn this.pinTask task.id}}
-          @toggleComplete={{fn @toggleCompleted task.id}}
-        />
-      {{/each}}
-    </section>
+      {{! Unpinned items }}
+      {{#if this.hasUnpinnedTasks}}
+        <section class='task-list__content-items'>
+          {{#each this.unpinnedTasks as |task|}}
+            <Task::Item
+              @task={{task}}
+              @togglePin={{fn this.pinTask task.id}}
+              @toggleComplete={{fn @toggleCompleted task.id}}
+            />
+          {{/each}}
+        </section>
+      {{/if}}
+    </div>
+  {{else}}
+    <div class='task-list__loader'>
+      <img src='/img/logo.svg' alt='Empty' />
+      <p class='task-list__loader-text'>
+        You don't have any
+        {{@status}}
+        tasks.
+      </p>
+    </div>
   {{/if}}
 </div>
