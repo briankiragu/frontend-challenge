@@ -1,7 +1,12 @@
 <div class='task-item'>
   {{! Task Item Checkbox }}
   <label for='completed' class='task-item__checkbox'>
-    <input type='checkbox' name='completed' id='completed' class='border' />
+    <Input
+      id={{this.inputId}}
+      @type='checkbox'
+      @checked={{@task.isComplete}}
+      {{on 'input' @toggleComplete}}
+    />
   </label>
 
   {{! Task Item Text }}
@@ -45,8 +50,6 @@
 
   {{! Task Item Actions }}
   <div class='task-item__actions'>
-    <button type='button'>
-      In progress
-    </button>
+    <span class='task-item__actions-item'>{{this.status}}</span>
   </div>
 </div>
