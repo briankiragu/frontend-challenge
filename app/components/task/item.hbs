@@ -38,7 +38,9 @@
 
   {{! Task Item Pin }}
   <div class='task-item__pin'>
-    <button type='button' {{on 'click' @togglePin}}></button>
+    <button type='button' {{on 'click' @togglePin}}>
+      <img src='/img/icons/pin.svg' alt='Pin' />
+    </button>
   </div>
 
   {{! Task Item Actions }}
