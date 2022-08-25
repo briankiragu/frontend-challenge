@@ -5,15 +5,21 @@
   </header>
 
   {{! Pinned items }}
-  {{! <section class='task-list__items'>
-    <h6 class='task-list__items-heading border-bottom'>Pinned items</h6>
-    <Task::Item />
-  </section> }}
+  {{#if this.hasPinnedTasks}}
+    <section class='task-list__items'>
+      <h6 class='task-list__items-heading'>Pinned items</h6>
+      {{#each this.pinnedTasks as |task|}}
+        <Task::Item @task={{task}} @togglePin={{fn this.unpinTask task.id}} />
+      {{/each}}
+    </section>
+  {{/if}}
 
   {{! Unpinned items }}
-  <section class='task-list__items'>
-    <Task::Item />
-    <Task::Item />
-    <Task::Item />
-  </section>
+  {{#if this.hasUnpinnedTasks}}
+    <section class='task-list__items'>
+      {{#each this.unpinnedTasks as |task|}}
+        <Task::Item @task={{task}} @togglePin={{fn this.pinTask task.id}} />
+      {{/each}}
+    </section>
+  {{/if}}
 </div>

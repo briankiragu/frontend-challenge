@@ -11,14 +11,17 @@
         border-top-left-radius: var(--border-radius-sm);
         border-top-right-radius: var(--border-radius-sm);
         color: var(--accent-color-dark);
-        font-size: var(--font-size);
+        font-size: 0.95rem;
         font-weight: semibold;
-        // margin-right: 1rem;
         padding: 0.4rem 0.8rem;
         transition: var(--transition-hover);
 
         &:hover {
           background-color: var(--background-color-dark);
+        }
+
+        &:focus {
+          outline: none;
         }
 
         &.active {

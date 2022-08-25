@@ -3,8 +3,20 @@
   <div class='tabs'>
     {{! Tab Links }}
     <nav class='tabs__links'>
-      <button type='button' class='tabs__links-item active'>Active Tasks</button>
-      <button type='button' class='tabs__links-item'>Completed Tasks</button>
+      <button
+        type='button'
+        class='tabs__links-item active'
+        {{on 'click' (fn this.focusTab 'active')}}
+      >
+        Active Tasks
+      </button>
+      <button
+        type='button'
+        class='tabs__links-item'
+        {{on 'click' (fn this.focusTab 'completed')}}
+      >
+        Completed Tasks
+      </button>
     </nav>
 
     <section class='tabs__content'>
@@ -44,7 +56,10 @@
       </div>
 
       <div class='tabs__content-item'>
-        <Task::List />
+        <Task::List
+          @tasks={{this.pendingTasks}}
+          @toggleCompleted={{this.toggleCompleted}}
+        />
       </div>
     </section>
   </div>

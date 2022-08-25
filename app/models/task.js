@@ -10,4 +10,10 @@ export default class TaskModel extends Model {
 
   @attr('boolean')
   isComplete;
+
+  @attr('number')
+  creator;
+
+  @attr('boolean')
+  isPinned;
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 2,
+    "name": "A task",
+    "description": "This is a task.",
+    "isComplete": false,
+    "isPinned": false,
+    "creator": 2
+  },
+  {
+    "id": 1,
+    "name": "Solve all github issues",
+    "description": "Solve the world's Github issues.",
+    "isComplete": false,
+    "isPinned": true,
+    "creator": 2
+  },
+  {
+    "id": 3,
+    "name": "Clean the kitchen",
+    "description": "It's filthy!",
+    "isComplete": false,
+    "isPinned": false,
+    "creator": 2
+  }
+]
