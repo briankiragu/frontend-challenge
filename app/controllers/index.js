@@ -6,9 +6,6 @@ export default class IndexController extends Controller {
   // Variable to keep track of which task list is being displayed.
   @tracked activeTab = 'active';
 
-  // Keep track of whether or not the filters are visible.
-  @tracked showFilters = false;
-
   // Declare all the pinned tasks.
   @tracked pendingTasks = this.model.tasks.filter((task) => !task.isComplete);
 
@@ -56,17 +53,6 @@ export default class IndexController extends Controller {
   @action
   focusTab(tab) {
     this.activeTab = tab;
-  }
-
-  /**
-   * Toggle the visibility of the filters.
-   *
-   * @returns {void}
-   * @author Brian Kariuki <bkariuki@hotmail.com>
-   */
-  @action
-  toggleFilters() {
-    this.showFilters = !this.showFilters;
   }
 
   /**

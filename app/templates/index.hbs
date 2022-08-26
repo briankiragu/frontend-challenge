@@ -22,30 +22,10 @@
 
     <section class='tabs__content'>
       {{! Tab content filter }}
-      <div class='tabs__content-filter'>
-        <button
-          type='button'
-          class='tabs__content-filter__toggle border'
-          {{on 'click' this.toggleFilters}}
-        >
-          Filter by user
-        </button>
-
-        {{#if this.showFilters}}
-          <div id='users' class='tabs__content-filter__results shadow border'>
-            {{#each this.model.users as |user|}}
-              <button
-                type='button'
-                class='tabs__content-filter__results-item'
-                {{on 'click' (fn this.filterTasks user.id)}}
-              >
-                <img src={{user.avatar}} alt={{user.id}} />
-                {{user.name}}
-              </button>
-            {{/each}}
-          </div>
-        {{/if}}
-      </div>
+      <Task::Filter
+        @users={{this.model.users}}
+        @onFilter={{this.filterTasks}}
+      />
 
       {{#if this.isPendingTab}}
         <div class='tabs__content-item'>
