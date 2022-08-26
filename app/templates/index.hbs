@@ -23,37 +23,28 @@
     <section class='tabs__content'>
       {{! Tab content filter }}
       <div class='tabs__content-filter'>
-        <label for='filter' class='tabs__content-filter__input'>
-          <input
-            type='search'
-            id='filter'
-            placeholder='Filter by user'
-            class='border'
-          />
-        </label>
+        <button
+          type='button'
+          class='tabs__content-filter__toggle border'
+          {{on 'click' this.toggleFilters}}
+        >
+          Filter by user
+        </button>
 
-        <div class='tabs__content-filter__results shadow border'>
-          <div class='tabs__content-filter__results-item'>
-            <img src='/img/avatars/marley.png' alt='Marley' />
-            <span>Marley</span>
+        {{#if this.showFilters}}
+          <div id='users' class='tabs__content-filter__results shadow border'>
+            {{#each this.model.users as |user|}}
+              <button
+                type='button'
+                class='tabs__content-filter__results-item'
+                {{on 'click' (fn this.filterTasks user.id)}}
+              >
+                <img src={{user.avatar}} alt={{user.id}} />
+                {{user.name}}
+              </button>
+            {{/each}}
           </div>
-          <div class='tabs__content-filter__results-item'>
-            <img src='/img/avatars/annie.png' alt='Marley' />
-            <span>Annie Kamau</span>
-          </div>
-          <div class='tabs__content-filter__results-item'>
-            <img src='/img/avatars/agbaye.png' alt='Marley' />
-            <span>Agbaye James</span>
-          </div>
-          <div class='tabs__content-filter__results-item'>
-            <img src='/img/avatars/clint.png' alt='Marley' />
-            <span>Clint West</span>
-          </div>
-          <div class='tabs__content-filter__results-item'>
-            <img src='/img/avatars/john.png' alt='Marley' />
-            <span>John Jones</span>
-          </div>
-        </div>
+        {{/if}}
       </div>
 
       {{#if this.isPendingTab}}

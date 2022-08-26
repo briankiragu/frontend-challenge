@@ -1,13 +1,10 @@
 <div class='task-item'>
   {{! Task Item Checkbox }}
-  <label for='completed' class='task-item__checkbox'>
-    <Input
-      id={{this.inputId}}
-      @type='checkbox'
-      @checked={{@task.isComplete}}
-      {{on 'input' @toggleComplete}}
-    />
-  </label>
+  <Task::ToggleComplete
+    id={{this.inputId}}
+    @value={{@task.isComplete}}
+    @onChecked={{@toggleComplete}}
+  />
 
   {{! Task Item Text }}
   <div>
@@ -24,21 +21,9 @@
 
   {{! Task Item Avatars }}
   <div class='task-item__avatars'>
-    <img
-      src='/img/avatars/default.png'
-      alt='Default'
-      class='task-item__avatars-image'
-    />
-    <img
-      src='/img/avatars/annie.png'
-      alt='Annie'
-      class='task-item__avatars-image'
-    />
-    <img
-      src='/img/avatars/clint.png'
-      alt='Clint'
-      class='task-item__avatars-image'
-    />
+    {{#each @task.users as |user|}}
+      <img src={{user.avatar}} alt='Default' class='task-item__avatars-image' />
+    {{/each}}
   </div>
 
   {{! Task Item Pin }}

@@ -1,5 +1,5 @@
 #index {
-  padding: 4rem;
+  padding: 2rem 3.1rem;
 
   .tabs {
     &__links {
@@ -7,18 +7,18 @@
       display: flex;
 
       &-item {
+        transition: var(--transition-hover);
+        display: flex;
+        justify-content: center;
         align-items: center;
-        background-color: transparent;
         border: none;
         border-top-left-radius: var(--border-radius-sm);
         border-top-right-radius: var(--border-radius-sm);
+        background-color: transparent;
+        padding: 0.3rem 0.8rem;
         color: var(--accent-color-dark);
-        display: flex;
         font-size: 0.95rem;
         font-weight: semibold;
-        justify-content: center;
-        padding: 0.4rem 0.8rem;
-        transition: var(--transition-hover);
 
         &:hover {
           background-color: var(--background-color-dark);
@@ -29,13 +29,17 @@
         }
 
         &-count {
+          align-items: center;
           background-color: var(--accent-color-dark);
           border-radius: 100%;
           color: white;
+          display: flex;
           font-size: 0.75rem;
+          justify-content: center;
           margin: 0;
-          margin-left: 0.3rem;
-          padding: 0.1rem 0.4rem;
+          margin-left: 0.4rem;
+          height: 20px;
+          width: 20px;
         }
 
         &.active {
@@ -43,7 +47,7 @@
           border-bottom: 2px solid var(--primary-color);
           color: var(--primary-color);
 
-          &-count {
+          .tabs__links-item-count {
             background-color: var(--primary-color);
           }
         }
@@ -54,40 +58,59 @@
       padding: 15px 0;
 
       &-filter {
+        position: relative;
         border-radius: 4px;
         margin-bottom: 0.6rem;
-        width: 200px;
+        padding: 0 10px;
 
-        &__input {
+        &__toggle {
+          width: 200px;
+          background-color: white;
+          border-radius: var(--border-radius);
           margin-bottom: 3px;
+          padding: 6px 15px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: var(--accent-color);
+          font-size: 0.95rem;
 
-          input {
-            border-radius: var(--border-radius);
-            padding: 8px 17px;
-
-            &:focus {
-              outline: none;
-            }
+          &:focus {
+            outline: none;
           }
         }
 
         &__results {
+          position: absolute;
+          width: 220px;
           border-radius: var(--border-radius);
-          display: none;
-          padding: 0;
+          background-color: white;
+          padding: 4px 4px 0 4px;
 
           &-item {
-            align-items: center;
-            display: flex;
             transition: var(--transition-all);
+            width: 100%;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            background-color: transparent;
+            margin-bottom: 4px;
             padding: 3px 10px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            cursor: pointer;
 
             &:hover {
-              background-color: var(--accent-color-light);
+              background-color: var(--background-color-dark);
+            }
+
+            &:focus {
+              outline: none;
             }
 
             img {
-              margin-right: 8px;
+              margin: 0;
+              margin-right: 10px;
             }
           }
         }

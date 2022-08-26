@@ -9,15 +9,13 @@
     background-color: var(--background-color-light);
   }
 
-  &__checkbox {
+  &__toggle {
     align-items: center;
     display: flex;
     justify-content: center;
     margin: 0;
 
     input {
-      border-color: var(--accent-color-light);
-      border-radius: var(--border-radius);
       height: 20px;
       width: 20px;
     }
@@ -55,7 +53,7 @@
 
     &-image {
       position: relative;
-      left: 12px;
+      left: 10px;
       height: 35px;
       width: 35px;
 

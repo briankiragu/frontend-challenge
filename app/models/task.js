@@ -1,5 +1,4 @@
-import Model from '@ember-data/model';
-import { attr } from '@ember-data/model';
+import Model, { attr, hasMany } from '@ember-data/model';
 
 export default class TaskModel extends Model {
   @attr('string')
@@ -14,6 +13,6 @@ export default class TaskModel extends Model {
   @attr('number')
   creator;
 
-  @attr('boolean')
-  isPinned;
+  @hasMany('user')
+  users;
 }

@@ -6,11 +6,14 @@ export default class IndexController extends Controller {
   // Variable to keep track of which task list is being displayed.
   @tracked activeTab = 'active';
 
+  // Keep track of whether or not the filters are visible.
+  @tracked showFilters = false;
+
   // Declare all the pinned tasks.
-  @tracked pendingTasks = this.model.filter((task) => !task.isComplete);
+  @tracked pendingTasks = this.model.tasks.filter((task) => !task.isComplete);
 
   // Declare all the unpinned tasks.
-  @tracked completedTasks = this.model.filter((task) => task.isComplete);
+  @tracked completedTasks = this.model.tasks.filter((task) => task.isComplete);
 
   /**
    * Return the count of completed tasks.
@@ -56,6 +59,30 @@ export default class IndexController extends Controller {
   }
 
   /**
+   * Toggle the visibility of the filters.
+   *
+   * @returns {void}
+   * @author Brian Kariuki <bkariuki@hotmail.com>
+   */
+  @action
+  toggleFilters() {
+    this.showFilters = !this.showFilters;
+  }
+
+  /**
+   * Only show the tasks associated with the given user ID.
+   *
+   * @param {number} userId User ID to get tasks from
+   *
+   * @returns {void}
+   * @author Brian Kariuki <bkariuki@hotmail.com>
+   */
+  @action
+  filterTasks(userId) {
+    console.dir(`Getting tasks for user ${userId}`);
+  }
+
+  /**
    * Mark a task as either complete or incomplete.
    *
    * @param {number} id The ID of the task.
@@ -66,15 +93,15 @@ export default class IndexController extends Controller {
   @action
   toggleCompleted(id) {
     // Find the index of the task by ID.
-    const index = this.model.findIndex((task) => task.id === id);
+    const index = this.model.tasks.findIndex((task) => task.id === id);
 
     // If the task exists, pin it.
     if (index !== -1) {
-      this.model[index].isComplete = !this.model[index].isComplete;
+      this.model.tasks[index].isComplete = !this.model.tasks[index].isComplete;
 
       // Refresh the pending and completed task lists.
-      this.pendingTasks = this.model.filter((task) => !task.isComplete);
-      this.completedTasks = this.model.filter((task) => task.isComplete);
+      this.pendingTasks = this.model.tasks.filter((task) => !task.isComplete);
+      this.completedTasks = this.model.tasks.filter((task) => task.isComplete);
     }
   }
 }
