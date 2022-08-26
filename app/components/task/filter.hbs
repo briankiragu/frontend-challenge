@@ -10,14 +10,14 @@
   {{#if this.showFilters}}
     <div id='users' class='tabs__content-filter__results shadow border'>
       {{#each @users as |user|}}
-        <button
-          type='button'
+        <LinkTo
+          @route='application'
+          @query={{hash userId=user.id}}
           class='tabs__content-filter__results-item'
-          {{on 'click' (fn @onFilter user.id)}}
         >
           <img src={{user.avatar}} alt={{user.id}} />
           {{user.name}}
-        </button>
+        </LinkTo>
       {{/each}}
     </div>
   {{/if}}
